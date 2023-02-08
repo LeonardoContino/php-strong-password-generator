@@ -1,6 +1,7 @@
 <?php 
-
+var_dump($_POST);
 function generatePassword($lunghezza){
+    
     $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!%$£"/()=&%';
     $random_password = '';
     for($i = 0; $i < $lunghezza; $i++){
@@ -38,19 +39,19 @@ Milestone 3: invece di visualizzare la password nella index, effettuare un redir
      <div class="container text-center mt-4">
         
 
-        <form action="#" method="POST">
-        <h1>Password Generator</h1>
-        <h3>genera una password</h3>
-        <p>la password generata è: <?= generatePassword(5) ?></p>
-            <div class="d-flex justify-content-center gap-3 p-4 align-items-center">
-                <p class="">lunghezza password</p>
-                <input type="number" name="<?= $lunghezza ?>">
-            </div>
+        <form action="" method="POST">
+            <h1>Password Generator</h1>
+            <h3>genera una password</h3>
+            <p>la password generata è: <?= generatePassword($_POST['lunghezza']) ?></p>
+                <div class="d-flex justify-content-center gap-3 p-4 align-items-center">
+                    <p class="">lunghezza password</p>
+                    <input type="number" name="lunghezza">
+                </div>
 
-            <div>
-                <button class="btn btn-success">invia</button>
-                <button class="btn btn-secondary">annulla</button>
-            </div>
+                <div>
+                    <button class="btn btn-success">invia</button>
+                    <button class="btn btn-secondary">annulla</button>
+                </div>
 
         </form>
      </div>
