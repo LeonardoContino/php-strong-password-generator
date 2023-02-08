@@ -1,6 +1,5 @@
 <?php
 
-var_dump($_POST);
 function generatePassword($lunghezza){
     
     $caratteri = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!%$£"/()=&%';
@@ -10,3 +9,4 @@ function generatePassword($lunghezza){
     }
     return $random_password;
 }
+
