@@ -7,4 +7,5 @@ if(empty($_SESSION['password'])){
 }
 ?>
 
-<p>la password generata è: <?= generatePassword($_POST['lunghezza']) ?></p>
+<p>la password generata è: <?= $_SESSION['password'] ?></p>
+

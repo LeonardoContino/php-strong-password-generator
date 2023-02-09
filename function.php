@@ -7,6 +7,7 @@ function generatePassword($lunghezza){
     for($i = 0; $i < $lunghezza; $i++){
         $random_password .= $caratteri[rand(0, strlen($caratteri) -1)];
     }
-    return $random_password;
+    session_start();
+    $_SESSION['password'] = $random_password;
+    return true;
 }
-

@@ -1,11 +1,11 @@
 <?php 
-include __DIR__ .'/function.php';
+require __DIR__ .'/function.php';
 
-if(generatePassword($_POST['lunghezza'])){
+if(isset($_POST['lunghezza'])){
+    $result = generatePassword($_POST['lunghezza']);
     session_start();
 
-    $_SESSION['password'] = true;
-    header('location: password.php');
+    if($result === true) header('location: password.php');
 
 }
 
@@ -26,21 +26,22 @@ if(generatePassword($_POST['lunghezza'])){
 
      <div class="container text-center mt-4">
         
-
+        
         <form action="" method="POST">
             <h1>Password Generator</h1>
             <h3>genera una password</h3>
                 <div class="d-flex justify-content-center gap-3 p-4 align-items-center">
                     <p class="">lunghezza password</p>
-                    <input type="number" name="lunghezza">
+                    <input type="number" name="lunghezza" id="lunghezza">
                 </div>
 
                 <div>
-                    <button class="btn btn-success">invia</button>
+                    <button class="btn btn-success" type="submit">invia</button>
                     <button class="btn btn-secondary">annulla</button>
                 </div>
 
         </form>
+        
      </div>
     
 
